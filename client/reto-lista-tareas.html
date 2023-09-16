@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        const tasks = [
+            { task: 'Aprender BD', done: true },
+            { task: 'Aprender React', done: false },
+            { task: 'Mirar las estrellas', done: false }
+        ];
+
+        const app = document.getElementById('app');
+
+        tasks.forEach(task => {
+
+            let checked = task.done? 'checked' : '';
+
+            app.innerHTML += `
+                <li>
+                    <input type="checkbox" ${checked}>
+                    ${task.task}
+                </li>
+            `;
+        });
+    </script>
+</body>
+</html>
